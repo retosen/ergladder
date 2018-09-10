@@ -7,3 +7,9 @@ class User(AbstractUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['date_of_birth', 'username']
+
+class ErgPiece(models.Model):
+    date = models.DateTimeField()
+    time = models.TimeField()
+    distance = models.IntegerField()
+    email = models.ForeignKey(User, on_delete=models.CASCADE)
